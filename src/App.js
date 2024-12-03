@@ -1,5 +1,4 @@
 import { useState } from "react"; //https://docs.github.com/fr/graphql/overview/explorer
-import "./App.css";
 import { gql, useLazyQuery } from "@apollo/client";
 
 const GET_USER_REPOS = gql`
@@ -30,11 +29,11 @@ function App() {
     });
   };
 
-  const handleKeePress = (e) => {
-    if (e.key === "Enter") {
-      handleSearch();
-    }
-  };
+  // const onKeyDown = (e) => {
+  //   if (e.key === "Enter") {
+  //     handleSearch();
+  //   }
+  // };
 
   return (
     <div style={{ textAlign: "center", padding: "50px" }}>
@@ -42,12 +41,11 @@ function App() {
       <input
         type="text"
         value={username}
-        onChange={(e) => {
-          setUsername(e.target.value);
-        }}
+        onChange={(e) => setUsername(e.target.value)}
         placeholder="Enter User"
-        onKeyPress={handleKeePress}
+        onKeyDown={(e) => e.key === "Enter" && handleSearch()}
       />
+
       <button onClick={handleSearch}>Search</button>
 
       {loading && <p>Loading...</p>}

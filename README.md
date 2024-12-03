@@ -1,70 +1,125 @@
-# Getting Started with Create React App
+# GraphHub-Query
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+GraphHub-Query is a React-based application that allows users to retrieve and display GitHub repositories using GitHub's GraphQL API. It provides a simple and efficient way to explore repositories, making it a powerful tool for developers.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Fetch and display repositories using GitHub's GraphQL API.
+- User-friendly interface for seamless navigation.
+- Responsive design for use across various devices.
+- Error handling for API calls to ensure smooth user experience.
 
-### `npm start`
+## Demo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Check out the live demo here: [netlify Demo](https://graph-hub-querry.netlify.app/)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Screenshot
 
-### `npm test`
+![GraphHub-Query Screenshot](./GraphHub-Querry.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies Used
 
-### `npm run build`
+- **React**: Frontend library for building the user interface.
+- **GraphQL**: Query language for API data fetching.
+- **GitHub API**: Used to retrieve repository data.
+- **CSS**: Styling for the application.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Prerequisites
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Ensure you have the following installed on your system:
 
-### `npm run eject`
+- Node.js (>= 14.x)
+- npm or yarn
+- A valid GitHub token with API access
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Installation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/MedBenDakkoum/GraphHub-Query.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd GraphHub-Query
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Setup GitHub Token
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Generate a personal access token from your GitHub account.
+2. Create a `.env` file in the root directory and add your token:
+   ```env
+   REACT_APP_GITHUB_TOKEN=your_personal_access_token
+   ```
 
-## Learn More
+### Running the Application
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To start the development server, run:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm start
+```
 
-### Code Splitting
+The app will be available at `http://localhost:3000`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Building for Production
 
-### Analyzing the Bundle Size
+To create an optimized production build, run:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+npm run build
+```
 
-### Making a Progressive Web App
+The production-ready files will be located in the `build` folder.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Deployment
 
-### Advanced Configuration
+This project can be easily deployed using platforms like [Netlify](https://www.netlify.com/) or [GitHub Pages](https://pages.github.com/).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Deploying to Netlify
 
-### Deployment
+1. Build the project:
+   ```bash
+   npm run build
+   ```
+2. Use the Netlify CLI:
+   ```bash
+   npm install -g netlify-cli
+   netlify login
+   netlify init
+   netlify deploy --prod
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Deploying to GitHub Pages
 
-### `npm run build` fails to minify
+1. Install the GitHub Pages package:
+   ```bash
+   npm install gh-pages --save-dev
+   ```
+2. Add the following scripts to your `package.json`:
+   ```json
+   "homepage": "https://MedBenDakkoum.github.io/GraphHub-Query",
+   "scripts": {
+     "predeploy": "npm run build",
+     "deploy": "gh-pages -d build"
+   }
+   ```
+3. Deploy to GitHub Pages:
+   ```bash
+   npm run deploy
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Author
+
+**Mohamed Ben Dakkoum**
+
+Feel free to contribute or report issues!
